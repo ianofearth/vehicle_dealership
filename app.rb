@@ -8,12 +8,12 @@ get('/') do
 end
 
 get('/vehicles') do
-    @vehicles = Vehicles.all()
+    @vehicles = Vehicle.all()
     erb(:vehicles)
 end
 
 get('/vehicles/new') do
-    erb(:vehicle_form)
+    erb(:vehicles_form)
 end
 
 post('/vehicles') do
