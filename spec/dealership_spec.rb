@@ -26,4 +26,29 @@ describe(Dealership) do
             expect(test_dealership.cars()).to(eq([]))
         end
     end
+
+    describe('#save') do
+        it("adds a dealership to an array of saved dealerships") do
+            test_dealership = Dealership.new("Bob's Used Cars")
+            test_dealership.save()
+            expect(Dealership.all()).to(eq([test_dealership]))
+        end
+    end
+
+    describe('.all') do
+        it("is empty at first") do
+            expect(Dealership.all()).to(eq([]))
+        end
+    end
+
+    describe('.clear') do
+        it("empties out all of the saved dealerships") do
+            test_dealership = Dealership.new("Bob's Used Cars")
+            test_dealership.save()
+            test_dealership.clear()
+            expect(Dealership.all()).to(eq([]))
+        end
+    end
+
+
 end
