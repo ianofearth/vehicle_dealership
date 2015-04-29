@@ -5,6 +5,11 @@ class Vehicle
         @make = make
         @model = model
         @year = year
+        @id = @@vehicles.length() + 1
+    end
+
+    define_method(:id) do
+        @id
     end
 
     define_method(:make) do
@@ -30,7 +35,7 @@ class Vehicle
     define_singleton_method(:clear) do
         @@vehicles = []
     end
-    
+
     define_method(:age) do
         current_year = Time.new().year()
         current_year - @year
