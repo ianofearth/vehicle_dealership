@@ -2,9 +2,9 @@ require('rspec')
 require('vehicle')
 
 describe(Vehicle) do
-    # before() do
-    #     Vehicle.clear()
-    # end
+    before() do
+        Vehicle.clear()
+    end
 
     describe('#make') do
         it('returns the make of the vehicle') do
